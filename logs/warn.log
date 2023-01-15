@@ -1,0 +1,16 @@
+{"level":40,"time":1672261104518,"pid":9596,"hostname":"DESKTOP-JVIRKLF","msg":"/favicon.ico method:GET not found"}
+{"level":40,"time":1672261397803,"pid":1304,"hostname":"DESKTOP-JVIRKLF","msg":"/alt= method:GET not found"}
+{"level":40,"time":1672261397806,"pid":1304,"hostname":"DESKTOP-JVIRKLF","msg":"/123 method:GET not found"}
+{"level":40,"time":1672323037275,"pid":7152,"hostname":"DESKTOP-IO5QHLD","msg":"/favicon.ico method:GET not found"}
+{"level":40,"time":1672323056451,"pid":7152,"hostname":"DESKTOP-IO5QHLD","msg":"/alt= method:GET not found"}
+{"level":40,"time":1672323056455,"pid":7152,"hostname":"DESKTOP-IO5QHLD","msg":"/123 method:GET not found"}
+{"level":40,"time":1672323895515,"pid":9536,"hostname":"DESKTOP-IO5QHLD","msg":"/alt= method:GET not found"}
+{"level":40,"time":1672323895521,"pid":9536,"hostname":"DESKTOP-IO5QHLD","msg":"/123 method:GET not found"}
+{"level":40,"time":1672324683413,"pid":14332,"hostname":"DESKTOP-IO5QHLD","msg":"/alt= method:GET not found"}
+{"level":40,"time":1672324683420,"pid":14332,"hostname":"DESKTOP-IO5QHLD","msg":"/123 method:GET not found"}
+{"level":40,"time":1672325836319,"pid":12128,"hostname":"DESKTOP-IO5QHLD","msg":"/favicon.ico method:GET not found"}
+{"level":40,"time":1672331650240,"pid":13608,"hostname":"DESKTOP-IO5QHLD","msg":"/newUser?username=marian&password=qwerty123 method:GET not found"}
+
+{"level":40,"time":1673632272891,"pid":716,"hostname":"DESKTOP-JVIRKLF","msg":"/favicon.ico method:GET not found"}
+{"level":40,"time":1673632297899,"pid":716,"hostname":"DESKTOP-JVIRKLF","msg":"/alt= method:GET not found"}
+{"level":40,"time":1673632297901,"pid":716,"hostname":"DESKTOP-JVIRKLF","msg":"/123 method:GET not found"}
