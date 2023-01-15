@@ -42,7 +42,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: `mongodb+srv://Martin:${envConfig.DB_PASSWORD}@coderhouse.y8qvc3g.mongodb.net/sessions?retryWrites=true&w=majority`,
+      mongoUrl: `mongodb+srv://MartinAdmin:${envConfig.DB_PASSWORD}@cluster0.c47nijl.mongodb.net/sessions?retryWrites=true&w=majority`,
     }),
     rolling: true,
     cookie: {
