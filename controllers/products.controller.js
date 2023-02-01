@@ -28,6 +28,17 @@ class ProductsController {
             next(error);
         }
     }
+    async getProductsByCategory(req, res, next) {
+        const { category } = req.params;
+        try {
+            const products = await productsDao.getByCategory(category);
+            const response = successResponse(products);
+            res.status(HTTP_STATUS.OK).json(response);
+        }
+        catch (error) {
+            next(error);
+        }
+    }
 
     async saveProduct(req, res, next) {
         try {

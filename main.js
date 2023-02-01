@@ -3,7 +3,6 @@ const Messages = require("./models/messages");
 const { formatMessage, formatUser } = require("./utils/utils");
 const dbConfig = require("./db/config");
 const envConfig = require("./config");
-
 const session = require("express-session");
 const express = require("express");
 const { Server: HttpServer } = require("http");
@@ -14,6 +13,7 @@ const apiRoutes = require("./routers/app.routers");
 const passport = require("passport");
 const os = require("os");
 const cluster = require("cluster");
+const path = require('path');
 const argv = require("minimist")(process.argv.slice(2), {
   alias: {
     p: "port",
@@ -24,7 +24,7 @@ const argv = require("minimist")(process.argv.slice(2), {
     mode: "Fork",
   },
 });
-const PORT = argv.port;
+const PORT = process.env.PORT || argv.port
 
 // Instanciamiento
 const app = express();
@@ -52,11 +52,14 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(apiRoutes);
+
 
 // Views
 
-app.set("views", "./views/pages");
 app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, 'views'));
+
 
 //
 
@@ -122,6 +125,5 @@ if (argv.mode === "CLUSTER" && cluster.isPrimary) {
   });
 }
 
-app.use(apiRoutes);
 
 app.use(errorMiddleware);

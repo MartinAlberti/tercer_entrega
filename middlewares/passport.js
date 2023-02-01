@@ -5,19 +5,20 @@ const Users = require('../models/user.mongo');
 
 const UsersModel = new Users();
 
-passport.use('signup', new LocalStrategy(async (username, password, done) => {
-    try {
-        let newUser = {
-            email: username,
-            password: await bcrypt.hash(password, 10)
+passport.use(new LocalStrategy(
+    async function (username, password, done) {
+        const user = await UsersModel.getByEmail(username)
+        let isValidPassword = await bcrypt.compare(password, user.password);
+        if (!user) {
+            return done(null, false, { message: 'Incorrect username.' });
         }
-        const user = await UsersModel.save(newUser)
-        return done(null, user)
-    } catch (error) {
-        console.log('Error signing user up...')
-        return done(error)
+        if (!isValidPassword) {
+            return done(null, false, { message: 'Incorrect password.' });
+        }
+        return done(null, user);
+
     }
-}))
+));
 
 passport.use('login', new LocalStrategy(async (username, password, done) => {
     try {

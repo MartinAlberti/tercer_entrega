@@ -57,6 +57,17 @@ class DaoCartsMongo extends mongoContainer {
         }
         return updatedDocument;
     }
+    async delete(idCart) {
+        const updatedCart = await this.model.updateOne(
+            { _id: idCart },
+            { products: [] }
+        );
+        if (!updatedCart.matchedCount) {
+            const message = `Resource with id ${idCart} does not exist in our records`;
+            throw new HttpError(HTTP_STATUS.NOT_FOUND, message);
+        }
+        return updatedCart;
+    }
 
 }
 
