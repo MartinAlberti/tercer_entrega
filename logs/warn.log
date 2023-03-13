@@ -46,3 +46,5 @@
 {"level":40,"time":1678473315891,"pid":11500,"hostname":"DESKTOP-IO5QHLD","msg":"/favicon.ico method:GET not found"}
 {"level":40,"time":1678473325283,"pid":11500,"hostname":"DESKTOP-IO5QHLD","msg":"/admin.js method:GET not found"}
 {"level":40,"time":1678718048063,"pid":3512,"hostname":"DESKTOP-IO5QHLD","msg":"/favicon.ico method:GET not found"}
+{"level":40,"time":1678721176461,"pid":10592,"hostname":"DESKTOP-IO5QHLD","msg":"/auth/index.js method:GET not found"}
+{"level":40,"time":1678722976493,"pid":3468,"hostname":"DESKTOP-IO5QHLD","msg":"/auth/index.js method:GET not found"}

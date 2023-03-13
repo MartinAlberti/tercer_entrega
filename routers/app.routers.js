@@ -6,7 +6,6 @@ const productsRoutes = require('./products/products.routes')
 const cartsRoutes = require('../routers/carts/cart.routes');
 const logger = require("../logger/logger")
 const requestLogger = require("../middlewares/requestLogger")
-
 const path = require('path');
 const Products = require('../models/products.mongo');
 

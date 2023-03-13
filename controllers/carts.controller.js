@@ -52,6 +52,18 @@ class CartsController {
         }
     }
 
+    async emptyCart(req, res, next) {
+        const { id } = req.params;
+        try {
+            const emptyCart = await cartsDao.delete(id);
+            const response = successResponse(emptyCart);
+            res.status(HTTP_STATUS.OK).json(response);
+        }
+        catch (error) {
+            next(error);
+        }
+    }
+
     async deleteCart(req, res, next) {
         const { id } = req.params;
         try {
