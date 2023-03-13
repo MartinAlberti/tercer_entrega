@@ -27,7 +27,7 @@ router.get('/home', homeAuth, requestLogger, async (req, res) => {
 });
 
 router.get('/admin', auth, requestLogger, async (req, res) => {
-    res.render(path.resolve('Public/admin.ejs'), { products: await ProductsModel.getAll(), user: req.user });
+    res.render(path.resolve('Public/views/pages/admin/admin.ejs'), { products: await ProductsModel.getAll(), user: req.user });
 });
 
 
