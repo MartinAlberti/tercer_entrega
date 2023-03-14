@@ -2,6 +2,8 @@ const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 const Users = require('../models/user.mongo');
+const logger = require('../logger/logger');
+
 
 const UsersModel = new Users();
 
@@ -25,12 +27,12 @@ passport.use('login', new LocalStrategy(async (username, password, done) => {
         const user = await UsersModel.getByEmail(username)
         let isValidPassword = await bcrypt.compare(password, user.password);
         if (!isValidPassword) {
-            console.log('Error login user in...')
+            logger.error('Error login user in...')
             return done(null, false)
         }
         return done(null, user)
     } catch (error) {
-        console.log('Error login user in...')
+        logger.error('Error login user in...')
         return done(error)
     }
 }))

@@ -3,6 +3,7 @@ const socket = io()
 
 const productTable = document.getElementById('products-table')
 const nameInput = document.getElementById('name-input')
+const categoryInput = document.getElementById('category-input')
 const descriptionInput = document.getElementById('description-input')
 const stockInput = document.getElementById('stock-input')
 const priceInput = document.getElementById('price-input')
@@ -25,6 +26,7 @@ submitBtn.addEventListener('submit', (event) => {
     event.preventDefault()
 
     let title = nameInput.value;
+    let category = categoryInput.value
     let description = descriptionInput.value;
     let stock = stockInput.value;
     let price = priceInput.value;
@@ -32,6 +34,7 @@ submitBtn.addEventListener('submit', (event) => {
 
     const newProduct = {
         title,
+        category,
         description,
         stock,
         price,
@@ -41,6 +44,7 @@ submitBtn.addEventListener('submit', (event) => {
     socket.emit("newProduct", newProduct)
 
     nameInput.value = "";
+    categoryInput.value = "";
     stockInput.value = "";
     descriptionInput.value = "";
     priceInput.value = "";

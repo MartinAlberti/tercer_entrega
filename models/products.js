@@ -10,7 +10,7 @@ class Products {
 
   async getAll() {
     try {
-      const products = await this.knex.from(this.table).select('id', 'timestamp', 'title', 'description', 'stock', 'price', 'thumbnail')
+      const products = await this.knex.from(this.table).select('id', 'timestamp', 'title', 'category', 'description', 'stock', 'price', 'thumbnail')
       return products
     }
     catch (error) {
@@ -25,7 +25,7 @@ class Products {
 
     try {
       const product = await this.knex.from(this.table)
-        .select('id', 'timestamp', 'title', 'description', 'stock', 'price', 'thumbnail')
+        .select('id', 'timestamp', 'title', 'category' , 'description', 'stock', 'price', 'thumbnail')
         .where({ id: id });
     } catch (error) {
       console.log(error)
@@ -37,14 +37,12 @@ class Products {
   }
 
   async save(newProductParam) {
-    // Desctructuras los datos enviados por el usuario
-    const { title, price, thumbnail, stock, description } = newProductParam;
-    //Verifica que todos los datos esten completos 
-    if (title != null && price != null && thumbnail != null && stock != null) {
-      // Genera el nuevo producto
+    const { title, category, price, thumbnail, stock, description } = newProductParam;
+    if (title != null && category != null && price != null && thumbnail != null && stock != null) {
       const newProduct = {
         timestamp: Date.now(),
         title,
+        category,
         description,
         stock,
         price,
@@ -74,13 +72,14 @@ class Products {
 
   async updateById(id, product) {
 
-    const { title, price, thumbnail, stock, description } = product;
+    const { title, category, price, thumbnail, stock, description } = product;
 
     try {
       await this.knex.from(this.table)
         .where({ id: id })
         .update({
           title: title,
+          category: category,
           price: price,
           thumbnail: thumbnail,
           stock: stock,

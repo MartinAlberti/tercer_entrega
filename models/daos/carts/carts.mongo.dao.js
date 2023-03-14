@@ -7,7 +7,6 @@ const Products = require('../../products.mongo')
 const productsDao = new Products();
 
 
-
 const collection = 'carts'
 
 const cartSchema = new Schema({

@@ -1,12 +1,37 @@
-.products-div{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.products-div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 3%;
+  margin-bottom: 15%;
 }
-.nav-bar{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 10px;
-
+.card {
+  margin-top: 5%;
+}
+.nav-bar {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  width: 100%;
+}
+.img-thumbnail{
+    margin-right: 2%;
+}
+#logout-form {
+  width: fit-content;
+}
+.cartBtn {
+position: absolute;
+left: 22%;
+}
+.categoryDiv{
+    text-align: center;
+    margin-top: 5%;
+    text-decoration: none;
+}
+.catButton{
+    width: 100px;
 }
