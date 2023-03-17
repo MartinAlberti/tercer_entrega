@@ -24,8 +24,9 @@
   width: fit-content;
 }
 .cartBtn {
-position: absolute;
-left: 22%;
+position: relative;
+margin-top: 40px;
+
 }
 .categoryDiv{
     text-align: center;

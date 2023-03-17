@@ -14,7 +14,7 @@ const mg = mailgun({ apiKey: envConfig.APIKEY_MAILGUN, domain: envConfig.DOMAIN_
 const sendEmail = (to, subject, text) => {
 
     const data = {
-        from: 'martinalberti123@gmail.com',
+        from: ' Excited User martinalberti123@gmail.com',
         to,
         subject,
         text
