@@ -14,7 +14,7 @@ const mg = mailgun({ apiKey: envConfig.APIKEY_MAILGUN, domain: envConfig.DOMAIN_
 const sendEmail = (to, subject, text) => {
 
     const data = {
-        from: ' Excited User martinalberti123@gmail.com',
+        from: ' Ecommerce',
         to,
         subject,
         text
@@ -52,8 +52,8 @@ const sendWaNotification = async (message, waNumber) => {
 const sendSMS = async (message, to) => {
     const option = {
         body: message,
-        from: envConfig.TWILIO_NUMBER,
-        to
+        from: envConfig.TWILIO_PHONE_NUMBER,
+        to : `+${to}`
     }
     try {
         await twilioClient.messages.create(option)

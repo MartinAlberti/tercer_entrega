@@ -8,12 +8,14 @@ const logger = require("../logger/logger")
 const requestLogger = require("../middlewares/requestLogger")
 const path = require('path');
 const Products = require('../models/products.mongo');
+const infoRoutes = require("./info/info.routes")
 
 const ProductsModel = new Products()
 
 router.use('/auth', requestLogger, authRoutes)
 router.use('/products', requestLogger, productsRoutes)
 router.use('/carts', requestLogger, cartsRoutes)
+router.use('/info', requestLogger, infoRoutes)
 
 
 router.get('/', webAuth, requestLogger, async (req, res) => {

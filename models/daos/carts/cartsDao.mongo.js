@@ -19,7 +19,7 @@ class DaoCartsMongo extends mongoContainer {
 
     async createCart() {
         let item = {
-            timestrap: Date.now(),
+            timestamp: Date.now(),
             products: []
         }
         const newDocument = new this.model(item);
