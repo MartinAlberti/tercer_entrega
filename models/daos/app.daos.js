@@ -6,7 +6,8 @@ let CartsDao;
 switch (envConfig.DATASOURCE) {
     case 'mongo':
         ProductsDao = require('../products.mongo')
-        CartsDao = require('./carts/carts.mongo.dao')
+        CartsDao = require('./carts/cartsDao.mongo')
+
         break;
     default:
         throw new Error("Invalid Datasource")
@@ -14,5 +15,5 @@ switch (envConfig.DATASOURCE) {
 
 module.exports = {
     CartsDao,
-    ProductsDao
+    ProductsDao,
 }

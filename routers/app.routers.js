@@ -15,6 +15,7 @@ router.use('/auth', requestLogger, authRoutes)
 router.use('/products', requestLogger, productsRoutes)
 router.use('/carts', requestLogger, cartsRoutes)
 
+
 router.get('/', webAuth, requestLogger, async (req, res) => {
     res.sendFile(path.resolve('Public/login.html'));
 });

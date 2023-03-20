@@ -14,7 +14,7 @@ class CheckoutController {
             let parsedData = `Nuevo pedido de ${req.user.email}\n\n${JSON.stringify(productsInCart)}`
             let response = sendEmail(envConfig.ADMIN_EMAIL, 'New order', parsedData);
             sendWaNotification(parsedData, envConfig.ADMIN_NUMBER)
-            sendSMS('Hemos recibido tu pedido de manera exitosa, estaremos procesando tu pedido', req.user.phoneNumber)
+            sendSMS('Recibimos tu pedido de manera exitosa, estamos procesandolo', req.user.phoneNumber)
             res.status(HTTP_STATUS.CREATED).json(response);
         } catch (error) {
             next(error);

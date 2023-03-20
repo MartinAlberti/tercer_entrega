@@ -27,19 +27,21 @@ const sendEmail = (to, subject, text) => {
 
 const sendWaNotification = async (message, waNumber) => {
 
-    let to = 'whatsapp:+5493512377804'
+    let to = ""
     if (waNumber && waNumber.includes('+')) to = `whatsapp:${waNumber}`
     else to = `whatsapp:+${waNumber}`
     const option = {
         body: message,
         from: envConfig.TWILIO_WHATSAPP,
-        to
+        to,
     }
     try {
         await twilioClient.messages.create(option)
-        logger.info(`${subject} Whatsapp was sent successfully to ${to}`);
+        .done()
+        logger.info(`${message} Whatsapp was sent successfully to ${to}`);
     }
     catch (err) {
+        console.log(err.message)
         return { sent: false }
     }
 
@@ -55,6 +57,7 @@ const sendSMS = async (message, to) => {
     }
     try {
         await twilioClient.messages.create(option)
+        .done()
     } catch (err) {
         return { sent: false }
     }
